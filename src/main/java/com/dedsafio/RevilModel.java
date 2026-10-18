@@ -1,7 +1,7 @@
 package com.dedsafio;
 
 import net.minecraft.client.model.geom.builders.*;
-
+import net.minecraft.client.model.geom.PartPose;
 /** Generado desde dedrevil.cpmproject */
 public class RevilModel {
     private static final float RAD = (float) (Math.PI / 180.0);
