@@ -1,0 +1,14 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+}
+version = '1.0.0'
+group = 'com.dedsafio'
+base { archivesName = 'dedsafio' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(17) }
+minecraft { mappings channel: 'official', version: '1.20.1' }
+dependencies { minecraft 'net.minecraftforge:forge:1.20.1-47.3.0' }
+tasks.named('jar', Jar).configure {
+    manifest { attributes(['Specification-Title': 'dedsafio', 'Implementation-Version': project.version]) }
+}
+jar.finalizedBy('reobfJar')
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
